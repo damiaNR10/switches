@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.min.css" type="text/css" />
+<title>Switch</title>
+</head>
+<body>
+<header class="topbar">
+</header>
+<main>
+    <div class="switches">
+        <div class="single-box">
+            <h3>Warstwa merytoryczna</h3>
+            <div class="labels">
+                <label class="option active">przygotowywana <b>przez Klienta</b></label>
+                <label class="switch" onclick="changeStatus(this)">
+                    <input type="checkbox" onclick="funkcja()"> 
+                    <span class="slider round"></span>
+                </label>
+                <label class="option">przygotowywana <b>przez eduRoom</b></label>
+            </div>
+        </div>
+        <div class="single-box">
+            <h3>Scenariusz i interaktywności</h3>
+            <div class="labels">
+                <label class="option active"><b>proste</b></label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <label class="option"><b>złożone</b>(np. grywalizacja)</label>
+            </div>
+        </div>
+        <div class="single-box">
+            <h3>Grafika</h3>
+            <div class="labels">
+                <label class="option active"><b>proste ikony</b></label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <label class="option"><b>rozbudowana</b> grafika</label>
+            </div>
+        </div>
+        <div class="single-box">
+            <h3>Dodatkowe elementy multimedialne</h3>
+            <div class="labels">
+                <label class="option active"><b>brak</b></label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <label class="option"><b>animacje / wideo / lektor</b></label>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+</footer>
+</body>
+<script>
+    function funkcja() {
+        var isChecked = this.checked;
+        //console.log(isChecked);
+    }
+    function changeStatus(element) {
+        var texts = this.document.getElementsByClassName("option");
+        console.log(texts);
+        for(var i = texts.length-2; i < texts.length; i++) {
+            if(texts[i].classList.contains("active")){
+                texts[i].classList.remove("active");
+            } else {
+                texts[i].classList.add("active");
+            }
+        }
+    }
+</script>
+</html>
